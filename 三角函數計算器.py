@@ -23,7 +23,7 @@ def result1(): #輸出sin和角的數值
 
      answer=sin_sum(angleA,angleB,symbol)
 
-     answer_result.config(text='sin的和角數值為:'+' '+str(round(answer,6))) #取六位小數
+     answer_result.config(text='sin的和角數值≈'+'  '+str(round(answer,6))) #取六位小數
 
     except Exception as error:
        print(error) #利用終端機查看錯誤
@@ -45,7 +45,7 @@ tk.Button(function,text='計算sin和角(A+B)',command=result1).pack() #製作�
 
 def sin(A,B,symbol): #計算sin的差角公式
    SinC=math.sin(math.radians(A)-math.radians(B)) #sin的差角公式: sin(A-B)
-   SinC=math.sin(math.sin(math.radians(A)*math.cos(math.radians(B)-math.cos(math.radians(A)*math.sin(math.radians(B)))))) #sin(A-B)=sinA*cosB-cosA*sinB
+   SinC=math.sin(math.radians(A))*math.cos(math.radians(B))-math.cos(math.radians(A))*math.sin(math.radians(B)) #sin(A-B)=sinA*cosB-cosA*sinB
    return SinC
 
 def result2():
@@ -56,7 +56,7 @@ def result2():
 
       Answer=sin(angleA,angleB,symbol)
 
-      Answer_result.config(text='sin的差角數值為:'+' '+str(round(Answer,6)))
+      Answer_result.config(text='sin的差角數值≈'+'  '+str(round(Answer,6)))
 
    except Exception as error:
       print(error)
@@ -68,7 +68,12 @@ Answer_result.pack()
 tk.Button(function,text='計算sin差角(A-B)',command=result2).pack()
 function.mainloop()
 
+def cos(A,B,symbol):
+   cosc=math.cos(math.radians(A)+math.radians(B)) #cos的和角公式: cos(A+B)
+   cosc=math.cos(math.radians(A))*math.cos(math.radians(B))-math.sin(math.radians(A))*math.sin(math.radians(B))  #cos(A+B)=cosA*cosB-sinA*sinB
+   return cosc
 
-#差角公式的數值須修正
+
+
    
 
