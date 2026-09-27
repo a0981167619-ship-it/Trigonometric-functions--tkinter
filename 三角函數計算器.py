@@ -211,7 +211,7 @@ upshot_result.pack()
 tk.Button(function,text='計算cos的二倍角2θ',command=result8).pack()
 
 def tan_2theta(C): #計算tan的二倍角公式
-    tan=2*(math.tan(math.radians(C)))/(1-math.tan(math.radians(C))**2)  #tan的二倍角公式= 2tanθ/1-tan**2θ
+    tan=2*(math.tan(math.radians(C)))/(1-math.tan(math.radians(C))**2)  #tan的二倍角公式= 1.2tanθ/1-tan**2θ  2. sin2θ/cos2θ(商數關係)
     return tan
 
 def result9(): #輸出tan的二倍角數值
@@ -256,7 +256,7 @@ def cos_half_theta(C):  #計算cos的半角公式
     cos_half=math.sqrt((1+math.cos(math.radians(C)))/2) #cos的半角公式:1+cosθ/2開根號
     return cos_half
 
-def result_11():
+def result_11(): #輸出cos的半角數值
     try:
         angleC=float(entry_C.get())
         educt2=cos_half_theta(angleC)
@@ -271,9 +271,68 @@ educt2_result.pack()
 
 tk.Button(function,text='計算cos的半角θ/2',command=result_11).pack()
 
-def tan_half_theta(C):
-    tan_half=(1-math.cos(math.radians(C)))/(math.sin(math.radians(C)))
+def tan_half_theta(C): #計算tan的半角公式
+    tan_half=(1-math.cos(math.radians(C)))/(math.sin(math.radians(C))) #tan的半角公式: 1-cosθ/sinθ  2.sinθ/1+cosθ
     return tan_half
+
+def result_12(): #輸出tan的半角數值
+    try:
+        angleC=float(entry_C.get())
+        if (angleC-180)%360==0:
+            slay_result.config(text='未定義')
+        else:
+          slay=tan_half_theta(angleC)
+          slay_result.config(text='tan的半角數值≈'+'  '+str(round(slay,6)))
+
+    except Exception as error:
+        print(error)
+        slay_result.config(text='請輸入正確的角度數值')
+
+slay_result=tk.Label(function,text='tanθ/2')
+slay_result.pack()
+
+tk.Button(function,text='計算tan的半角θ/2',command=result_12).pack()
+
+def sin3_theta(C): #計算sin的三倍角公式
+    sin_3=3*(math.sin(math.radians(C)))-4*(math.sin(math.radians(C))**3)   #sin的三倍角公式: 3sinθ-4sin**3θ  口訣:陽光照在富士山上
+    return sin_3
+
+def result_13(): #輸出sin的三倍角數值
+    try:
+        angleC=float(entry_C.get())
+        outcome2=sin3_theta(angleC)
+        outcome2_result.config(text='sin的三倍角數值≈'+'  '+str(round(outcome2,6)))
+
+    except Exception as error:
+        print(error)
+        outcome2_result.config(text='請輸入正確的角度數值')
+
+outcome2_result=tk.Label(function,text='sin3θ')
+outcome2_result.pack()
+tk.Button(function,text='計算sin的三倍角3θ',command=result_13).pack()
+
+def cos3_theta(C): #計算cos的三倍角公式
+    cos_3=(4*(math.cos(math.radians(C)))**3)-3*(math.cos(math.radians(C))) #cos的三倍角公式: 4cos3θ**3-3cosθ  口訣: 塊三:四塊三減三塊(台語)
+    return cos_3
+
+def result_14(): #輸出cos的三倍角數值
+    try:
+        angleC=float(entry_C.get())
+        effect=cos3_theta(angleC)
+        effect_result.config(text='cos的三倍角數值≈'+'  '+str(round(effect,6)))
+
+    except Exception as error:
+        print(error)
+        effect_result.config(text='請輸入正確的角度數值')
+
+effect_result=tk.Label(function,text='cos3θ')
+effect_result.pack()
+
+tk.Button(function,text='計算cos的三倍角3θ',command=result_14).pack()
+
+function.mainloop()
+
+
 
 
 
