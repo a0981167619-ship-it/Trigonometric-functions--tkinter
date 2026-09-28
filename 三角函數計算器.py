@@ -330,6 +330,24 @@ effect_result.pack()
 
 tk.Button(function,text='計算cos的三倍角3θ',command=result_14).pack()
 
+def sin_t(C):
+    sint=math.sin(math.radians(C))
+    return sint
+
+def result_15():
+    try:
+        angleC=float(entry_C.get())
+        effect2=sin_t(angleC)
+        effect2_result.config(text='sin的數值≈'+'  '+str(round(effect2,6)))
+
+    except Exception as error:
+        print(error)
+        effect2_result.config(text='請輸入正確的角度數值')
+
+effect2_result=tk.Label(function,text='sinθ')
+effect2_result.pack()
+
+tk.Button(function,text='計算sinθ',command=result_15).pack()
 function.mainloop()
 
 
@@ -341,10 +359,4 @@ function.mainloop()
 
 
 
-
-
-
-
-
-   
 
