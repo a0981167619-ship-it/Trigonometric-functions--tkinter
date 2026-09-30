@@ -330,11 +330,11 @@ effect_result.pack()
 
 tk.Button(function,text='計算cos的三倍角3θ',command=result_14).pack()
 
-def sin_t(C):
+def sin_t(C): #計算sinθ的數值
     sint=math.sin(math.radians(C))
     return sint
 
-def result_15():
+def result_15(): #輸出sinθ的數值
     try:
         angleC=float(entry_C.get())
         effect2=sin_t(angleC)
@@ -348,15 +348,49 @@ effect2_result=tk.Label(function,text='sinθ')
 effect2_result.pack()
 
 tk.Button(function,text='計算sinθ',command=result_15).pack()
+
+def cos_t(C): #計算cosθ的數值
+    cost=math.cos(math.radians(C))
+    return cost
+
+def result_16(): #輸出cosθ的數值
+    try:
+        angleC=float(entry_C.get())
+        slay2=cos_t(angleC)
+        slay2_result.config(text='cos的數值≈'+'  '+str(round(slay2,6)))
+    
+    except Exception as error:
+        print(error)
+        slay2_result.config(text='請輸入正確的角度數值')
+
+slay2_result=tk.Label(function,text='cosθ')
+slay2_result.pack()
+
+tk.Button(function,text='計算cosθ',command=result_16).pack()
+
+def tan_t(C): #計算tanθ的數值
+    tan_t=math.tan(math.radians(C))
+    return tan_t
+
+def result_17(): #輸出tanθ的數值
+    try:
+        angleC=float(entry_C.get())
+        educt2=tan_t(angleC)
+        if (angleC-90)%180==0:
+           educt2_result.config(text='未定義')
+        else:
+            educt2=(round(tan_t(angleC),6))
+            if educt2==-0.0:
+                educt2=0.0
+        educt2_result.config(text='tan的數值≈'+'  '+str(educt2))
+    except Exception as error:
+        print(error)
+        educt2_result.config(text='請輸入正確的角度數值')
+
+educt2_result=tk.Label(function,text='tanθ')
+educt2_result.pack()
+
+tk.Button(function,text='計算tanθ',command=result_17).pack()
 function.mainloop()
-
-
-
-
-
-
-
-
-
-
-
+    
+        
