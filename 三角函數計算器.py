@@ -382,7 +382,7 @@ def result_17(): #輸出tanθ的數值
             educt2=(round(tan_t(angleC),6))
             if educt2==-0.0:
                 educt2=0.0
-        educt2_result.config(text='tan的數值≈'+'  '+str(educt2))
+            educt2_result.config(text='tan的數值≈'+'  '+str(educt2))
     except Exception as error:
         print(error)
         educt2_result.config(text='請輸入正確的角度數值')
@@ -391,6 +391,11 @@ educt2_result=tk.Label(function,text='tanθ')
 educt2_result.pack()
 
 tk.Button(function,text='計算tanθ',command=result_17).pack()
+
+label=tk.Label(text='sin的和角公式:\n sin(A+B)=sinAcosB+cosAsinB\nsin的差角公式:\n sin(A-B)=sinAcosB-cosAsinB\n cos的和角公式:\n cos(A+B)=cosAcosB-sinAsinB\n cos' \
+'的差角公式:\n cos(A-B)=cosAcosB+sinAsinB\ntan的和角公式:\n tan(A+B)=tanA+tanB/1-tanAtanB\n tan的差角公式:\n tan(A-B)=tanA-tanB/1+tanAtanB\n ' \
+'sin的二倍角公式:\n sin2θ= 2sinθcosθ\n tan的二倍角公式:\ntan2θ= 2tanθ/1-tan²θ\n sin的三倍角公式:\n sin3θ= 3sinθ-4sin3³θ\n'
+'cos的三倍角公式:\ncos3θ= 4cos³θ-3cos\n sin的半角公式:\n sinθ/2= ±√1-cosθ/2\n cos的半角公式:\n cosθ/2= ±√1+cosθ/2\n tan的半角公式:\n tanθ/2= 1-cosθ/sinθ\n = sinθ/1-cosθ\n,'
+'= ±√1-cosθ/1+cosθ',font=('Allura',15),fg="#002B53").place(anchor='nw')
 function.mainloop()
-    
         
