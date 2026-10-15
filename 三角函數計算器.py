@@ -396,6 +396,8 @@ label=tk.Label(text='sin的和角公式:\n sin(A+B)=sinAcosB+cosAsinB\nsin的差
 '的差角公式:\n cos(A-B)=cosAcosB+sinAsinB\ntan的和角公式:\n tan(A+B)=tanA+tanB/1-tanAtanB\n tan的差角公式:\n tan(A-B)=tanA-tanB/1+tanAtanB\n ' \
 'sin的二倍角公式:\n sin2θ= 2sinθcosθ\n tan的二倍角公式:\ntan2θ= 2tanθ/1-tan²θ\n sin的三倍角公式:\n sin3θ= 3sinθ-4sin3³θ\n'
 'cos的三倍角公式:\ncos3θ= 4cos³θ-3cos\n sin的半角公式:\n sinθ/2= ±√1-cosθ/2\n cos的半角公式:\n cosθ/2= ±√1+cosθ/2\n tan的半角公式:\n tanθ/2= 1-cosθ/sinθ\n = sinθ/1-cosθ\n,'
-'= ±√1-cosθ/1+cosθ',font=('Allura',15),fg="#002B53").place(anchor='nw')
+'= ±√1-cosθ/1+cosθ',font=('Allura',15),fg="#002B53").place(anchor='nw') #將公式擺在左上角
+
+label2=tk.Label(text='sin²θ+cos²θ=1',font=('Allura',15),fg="#041653").place(anchor='e')
 function.mainloop()
         
