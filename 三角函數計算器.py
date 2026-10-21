@@ -398,6 +398,18 @@ label=tk.Label(text='sin的和角公式:\n sin(A+B)=sinAcosB+cosAsinB\nsin的差
 'cos的三倍角公式:\ncos3θ= 4cos³θ-3cos\n sin的半角公式:\n sinθ/2= ±√1-cosθ/2\n cos的半角公式:\n cosθ/2= ±√1+cosθ/2\n tan的半角公式:\n tanθ/2= 1-cosθ/sinθ\n = sinθ/1-cosθ\n,'
 '= ±√1-cosθ/1+cosθ',font=('Allura',15),fg="#002B53").place(anchor='nw') #將公式擺在左上角
 
-label2=tk.Label(text='sin²θ+cos²θ=1',font=('Allura',15),fg="#041653").place(anchor='e')
+label2=tk.Label(text='平方關係:\nsin²θ+cos²θ=1\n sin²θ =1-cos2θ/2\n cos²θ=1+cos2θ/2\n tanθ=sinθ/cosθ\n正弦定理:\n a/sinA=b/sinB=c/sinC=2R\n a:b:c=sinA:sinB:sinC'
+'\n倒數關係:\n1/sinθ=cscθ\n1/cosθ=secθ\n1/tanθ=cotθ\n -θ關係:\nsin(-θ)=-sinθ\n cos(-θ)=cosθ\n tan(-θ)=-tanθ'
+'\n餘弦定理:\na²=b²+c²-2*b*c*cosA\nb²=a²+c²-2*a*c*cosB\n c²=a²+b²-2*a*b*cosC'
+'\n\ncosA=b²+c²-a²/2*b*c\ncosB=a²+c²-b²/2*a*c\ncosC=a²+b²-c²/2*a*b\n'
+'\n互補關係:\nsin(90°-θ)=cosθ\ncos(90°-θ)=sinθ\n',font=('Allura',15),fg="#013763").place(anchor='ne',relx=0.99,rely=0) #將公式擺在右上角
+
+label3=tk.Label(text='海龍公式:\n√s(s-a)(s-b)(s-c)\ns=a+b+c/2\n三角形面積公式:\n1/2a*b*sinC=1/2b*c*sinA=1/2a*c*sinB \nsin2θ、cos2θ:\nsin2θ=2tanθ/1+tan²θ\ncos2θ=1-tan²θ/1+tan²θ\n'
+'\nsinθ=y/r\n=對邊/斜邊\ncosθ=x/r\n=鄰邊/斜邊\ntanθ=y/x\n=對邊/鄰邊\n直線的斜角:\ntan(A-B)\n =m1-m2/1+m1*m2\n互補關係:\n'
+'sin(180°-θ)=sinθ\ncos(180°-θ)=-cosθ\ntan(180°-θ)=-tanθ\n',font=('Allura',15),fg="#053042").place(anchor='ne',relx=0.83,rely=0)
+
+label4=tk.Label(text='sin(270°-θ)=-cosθ\ncos(270°-θ)=-sinθ\nsin(270°+θ)=-cosθ\ncos(270°+θ)=sinθ'
+'\nsin(90°+θ)=cosθ\ncos(90°+θ)=-sinθ\n(sinθ-cosθ)²=1-2sinθcosθ\n(sinθ+cosθ)²=1+2sinθcosθ'
+'\nsinθ*cscθ=1\ncosθ*secθ=1\ntanθ*cotθ=1\ncotθ=cosθ/sinθ\n(cotθ為tanθ的倒數)\ncotθ=x/y\n'
+'secθ=r/x\ncscθ=r/y\n1+tan²θ=sec²θ\n1+cot²θ=csc²θ',font=('Allura',15),fg='#123654').place(relx=0.2,rely=0,anchor='nw')
 function.mainloop()
-        
